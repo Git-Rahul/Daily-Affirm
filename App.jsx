@@ -22,11 +22,6 @@ function App() {
   }, []);
 
   const [currentIndex, setCurrentIndex] = useState(0);
-
-  // const handlePrev = () => {
-  //   setCurrentIndex((prevIndex) => (prevIndex + 1) % affirmation.length);
-  // };
-
   const handleNext = () => {
     setCurrentIndex(
       (prevIndex) => (prevIndex - 1 + affirmation.length) % affirmation.length
@@ -35,30 +30,14 @@ function App() {
 
   return (
     <>
-      {/* <div
-        style={{
-          margin: "0px",
-          padding: "0px",
-          backgroundImage: `url(${bgimg})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          height: "200vh",
-          width: "100vw"
-        }}
-      > */}
         <h1>Daily Affirmations</h1>
         <div style={card}>
           <h2 style={{ width: "300px", margin: "auto", paddingTop: "40%" }}>
             "{affirmation[currentIndex]}."
-            {/* {affirmation.map((affirm) => (
-            <div key={affirm}>{affirm}</div>
-          ))} */}
           </h2>
         </div>
         <br />
-        {/* <button onClick={handlePrev}>Previous</button> */}
         <button onClick={handleNext}>SURPRISE ME</button>
-      {/* </div> */}
     </>
   );
 }
